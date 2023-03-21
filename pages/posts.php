@@ -1,14 +1,16 @@
 <?php
 include "../template-part/header.php";
 if (isset($_GET['id'])):
+    // Si il y a un parametre id en GET alors on vas afficher un single post
     $postId = $_GET['id'];
     $postJson = file_get_contents("../posts/post-" . $postId . ".json");
-    $post = json_decode($postJson, true); ?>
+    $post = json_decode($postJson, true);?>
     <div>
         <h1><?= $post['title'] ?></h1>
         <p><?= $post['content'] ?></p>
     </div>
 <?php else:
+    // Sinon on vas afficher tout les post
     $files = '../posts/' . '*' . '.json';
     foreach (glob($files) as $file) :
         $postJson = file_get_contents($file);
