@@ -2,7 +2,7 @@
 
 class Api{
     protected $json = [];
-    protected $OPENAI_API_KEY = "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";
+    protected $OPENAI_API_KEY = "YOUR API KEY";
     protected $getOpenAIModel= "text-davinci-003";
 
     // Genrer le titre du poste wia un mot
